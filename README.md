@@ -103,6 +103,26 @@ docker run -v $PWD:/workspace \
   peterevans/dockerhub-description:2
 ```
 
+## Using the Docker image with Drone CI
+
+Add a step to your .drone.yml
+
+```yml
+- name: readme
+  image: peter-evans/dockerhub-description:2
+  environment:
+    DOCKERHUB_USERNAME:
+      from_secret: dockerhub_username
+    DOCKERHUB_PASSWORD:
+      from_secret: dockerhub_password
+    DOCKERHUB_REPOSITORY: your/repo    
+    README_FILEPATH: README.md
+    SHORT_DESCRIPTION: "a short description"
+  commands:
+    - node /index.js 
+```
+
+
 ## License
 
 [MIT](LICENSE)
