@@ -117,7 +117,7 @@ Add a step to your .drone.yml
       from_secret: dockerhub_password
     DOCKERHUB_REPOSITORY: your/repo    
     README_FILEPATH: README.md
-    SHORT_DESCRIPTION: "a short description"
+    SHORT_DESCRIPTION: "short description"
   commands:
     - node /index.js 
 ```
